@@ -9,21 +9,16 @@ var modeBtn = document.querySelectorAll(".mode")
 var numberSquares = 6;
 
 for(var i = 0; i < modeBtn.length; i++){
-
-	modeBtn[i].addEventListener("click", function(){
-	
+		modeBtn[i].addEventListener("click", function(){
 		modeBtn[0].classList.remove("selected");
 		modeBtn[1].classList.remove("selected");
 		this.classList.add("selected");
-		
 		this.textContent === "Easy" ? numberSquares = 3 : numberSquares = 6;
-
 		reset();
 	});
 }
 
 function reset() {
-	
 	colors = arrayGenerator(numberSquares);
 	pickedColor = pickColor();
 	rgb.textContent = pickedColor;
@@ -51,14 +46,10 @@ rgb.textContent = pickedColor;
 
 
 for (var i = 0; i < squares.length; i++) {
-
 	squares[i].style.backgroundColor = colors[i];
-	
-
 	squares[i].addEventListener("click", function(){
-		
+
 		var clickedColor = this.style.backgroundColor;
-		
 		if (clickedColor === pickedColor) {
 			statDisplay.textContent = "Correct";
 			changeColor(pickedColor);
@@ -72,11 +63,9 @@ for (var i = 0; i < squares.length; i++) {
 }
 
 
-
 function arrayGenerator(num) {
 
 	var color = [];
-	
 	for (var i = 0; i < num; i++){
 		var r = Math.floor((Math.random() * 255));
 		var g = Math.floor((Math.random() * 255));
